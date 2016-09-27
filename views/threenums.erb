@@ -1,0 +1,11 @@
+Hello <%= name %> who is <%= age %>.  What are your 3 favorite numbers between 1 and 100?
+
+
+<form method = "post" action = "/threenums">
+<input type = "number" min = "1" max = "100" name = "num1">
+<input type = "number" min = "1" max = "100" name = "num2">
+<input type = "number" min = "1" max = "100" name = "num3">
+<input type = "hidden" name = "age" value = <%= age %>>
+<input type = "hidden" name = "user_name" value = <%= name %>>
+<input type = "submit">
+</form>

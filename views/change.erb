@@ -1,0 +1,11 @@
+
+
+Hey <%= name %>, lookin good at <%= age %>.  Lets empty those pockets.
+
+<form method = "post" action = "/change">
+<input type = "number" min = "1" max = "10000" name = "jingle">
+<input type = "hidden" name = "age" value = <%= age %>>
+<input type = "hidden" name = "user_name" value = <%= name %>>
+<input type = "submit">
+</form>
+
