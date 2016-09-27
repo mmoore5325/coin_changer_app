@@ -1,1 +1,1 @@
-web: bundle exec ruby cchanger.rb
+web: bundle exec ruby cchange.rb
