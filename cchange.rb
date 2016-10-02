@@ -59,7 +59,7 @@ post '/change' do
 
 coins = coin_changer(change.to_i)
 		erb :change, :locals => {:name => name, :age => age}
-		"Hey #{name}, we got your change ready.  We are giving you #{coins[:quarters]} quarters, #{coins[:dime]} dimes, #{coins[:nickels]} nickels, #{coins[:penny]} pennies."
-	
+		"Hey #{name}, we got your change ready.  We are giving you #{coins[:quarter]} quarters, #{coins[:dime]} dimes, #{coins[:nickel]} nickels, #{coins[:penny]} pennies."
+output = jake(coins)
 end
 

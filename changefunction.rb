@@ -8,44 +8,45 @@
 
 
 # 	while cents >= 25
-# 		coins[:quarter] = cents - 25
+# 		coins[:quarters] = cents - 25
 # 		cents = cents - 25
 	
 # 		q += 1
 # 	end
 
 # 	while cents >= 10
-# 		coins[:dime] = cents - 10
+# 		coins[:dimes] = cents - 10
 # 		cents = cents - 10
 		
 # 		d = d + 1
 # 	end
 
 # 	while cents >= 5
-# 		coins[:nickle] = cents - 5
+# 		coins[:nickles] = cents - 5
 # 		cents = cents - 5
 		
 # 		n = n + 1
 # 	end 
 	
 # 	if cents >= 1
-# 		coins[:penny] = cents
+# 		coins[:pennies] = cents
 # 		p = cents
 # 	else
-# 		coins[:penny] = 0
+# 		coins[:pennies] = 0
 # 	end
 # 		coins
-# 		return {:quarters=>q, :dime=>d, :nickels=>n, :penny=>p}
+# 		return {:quarters=>q, :dimes=>d, :nickels=>n, :pennies=>p}
 # end
 
 def coin_changer(cents)
 	coins = {}
-	sorter = {:quarter => 25, :dime =>10, :nickle=> 5, :penny =>1}
+	sorter = {:quarters =>25, :dimes =>10, :nickles=>5, :pennies =>1}
 		sorter.each do |key, value|
 			if cents >= value
 				coins[key] = cents / value
+				cents = cents % value
 			end
-			cent = cents % value
+			
 		end
 		# if key == :penny >= 2
 		# 	:penny = :pennies
@@ -57,8 +58,23 @@ def coin_changer(cents)
 
 	def jake(coins)
 		change = ""
+		
 		coins.each do |key, value|
-			change << ", " + value.to_s + ", " + key.to_s
+			# if key.to_s != "pennies"  && value < 2
+			# 	key.to_s = key.to_s.gsub("s", "")
+			
+			if key.to_s != "pennies"
+			change << value.to_s + " " + key.to_s + ", "
+			
+				elsif key.to_s == "pennies" && value == 1
+					key = "penny"
+					change << value.to_s + " " + key.to_s + "."
+			
+				else
+					change << value.to_s + " " + key.to_s + "."
+			end
+	
+		# end
 		end
 		change
 	end
