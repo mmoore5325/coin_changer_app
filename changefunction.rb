@@ -63,6 +63,10 @@ def coin_changer(cents)
 			# if key.to_s != "pennies"  && value < 2
 			# 	key.to_s = key.to_s.gsub("s", "")
 			
+			# if key.to_s != "pennies" && value == 1
+			# 	key.to_s = key.gsub("s", "")
+			# end
+			
 			if key.to_s != "pennies"
 			change << value.to_s + " " + key.to_s + ", "
 			
